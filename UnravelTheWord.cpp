@@ -16,7 +16,7 @@ int main()
   srand(time(0));
 	
   char play;
-   cout << "If you want begin game enter : <y/n> ";
+  cout << "If you want begin game enter : <y/n> ";
   cin >> play;
   play=tolower(play);
 	
