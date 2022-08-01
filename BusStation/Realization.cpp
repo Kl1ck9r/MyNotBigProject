@@ -85,7 +85,6 @@ void BusStation::OnlyNumber(const string& nameFile)
 		else
 		{
 			file.clear();
-			// пропускаем символы до следующего пробела
 			file.ignore(1, ' ');
 		}
 	} while (!file.eof());
