@@ -32,7 +32,7 @@ class PricesOnBus : public BusStation
 private:
 	double price;
 public:
-	PricesOnBus(double price = 0.1) :price(0.2) {}
+	PricesOnBus(double price = 0.1)  {}
 	PricesOnBus(int numberRoute, int numberFreeSeats[], const string& nameBus,
 		const string& time, const string& WhereTo, const string& WhereFrom, double prc);
 	double Price() { return price; }
