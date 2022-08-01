@@ -66,8 +66,8 @@ int main(void)
 			  else if (choice == 'D') { Add.ViewOfFile("file1.txt"); }
 			break;
 
-		case 'e'://lout.OnlyNumber("file1.txt");
-			lout.RemoveChoiceString("file1.txt");
+		case 'e':if(choice=='e'){lout.OnlyNumber("file1.txt");}
+			else if(choice=='E'){lout.RemoveChoiceString("file1.txt");}
 			break;
 		}
 		cout << "\nYou can do yet choice: ";
