@@ -2,7 +2,6 @@
 #include <iostream>
 #include <algorithm>
 #include <stack>
-#include <list>
 #include <string>
 #include "Top.h"
 
