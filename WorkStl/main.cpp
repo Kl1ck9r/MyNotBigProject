@@ -28,7 +28,6 @@ int main()
     Remote Samsung;
     std::vector<Remote> add;
     std::stack<Remote> ourl;
-     add.push_back(Samsung);
     std::string channel;
     std::string choice;
     int numberChannel;
