@@ -136,6 +136,8 @@ int main(void)
 							solt.pop_back();
 							std::cout << "Remove element in list \n";
 						}
+					}else{
+						std::cout<<"Wrong enter \n";
 					}
 
 					std::cout << "\nChoice: ";
