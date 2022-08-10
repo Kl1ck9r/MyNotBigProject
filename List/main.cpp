@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "List.h"
 
 
 void ViewForProduct(std::list<std::string>& add)
