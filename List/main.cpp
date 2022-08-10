@@ -127,7 +127,7 @@ int main(void)
 							std::cout << "\nAdded: " << solt.front();
 						}
 						else {
-							solt.insert(solt.begin(), 18); // add elements ViewCh in solt front() 
+							solt.insert(solt.begin(), 18); 
 							solt.remove_if(CheckOnCorrectly);// if have number less than 0 this string removing it's
 						}
 					}
