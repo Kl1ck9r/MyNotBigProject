@@ -9,7 +9,7 @@ class Array
 private :	
 	T arr[size];
 public:
-	 int Size() const { return size; }
+	const int Size() const { return size; }
 	T &operator[](T index) { return arr[index]; }
 	T At(T index) { return arr[index]; }
 	T& back() { return arr[size-1]; }
