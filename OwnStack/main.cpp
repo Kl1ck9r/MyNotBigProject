@@ -13,7 +13,6 @@ public:
 	void reserve(int capacity);
 	void push_back(T variable);
 	void pop_back();
-	void pop_front();
 	T& front();
 	T& back();
 	int begin();
@@ -88,11 +87,6 @@ template<typename T>
 void Vector<T>::pop_back()
 {
 	n_size--;
-}
-template<typename T>
-void Vector<T>::pop_front()
-{
-	buffer[0]=NULL;
 }
 
 template<typename T>
