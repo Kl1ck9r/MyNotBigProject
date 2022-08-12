@@ -23,7 +23,7 @@ public:
 	T& operator[](int index);
 	int size() { return n_size; }
 	int capacity() { return n_capacity; }
-	bool empty()const { return size == 0; }
+	bool empty()const { return n_size == 0; }
 
 private :
 	T* buffer;
