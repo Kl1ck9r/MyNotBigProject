@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 
 
@@ -15,7 +15,6 @@ public:
 	void reserve(int capacity);
 	void push_back(T variable);
 	void pop_back();
-//	void erase();
 	T& front();
 	T& back();
 	int begin();
@@ -23,7 +22,7 @@ public:
 	void clear();
 
 	friend std::ostream& operator<<(std::ostream& oc, const Vector<T>& vec);
-	T& operator[](int index) { return buffer[index]; }
+	T& operator[](int index);
 	int size() { return n_size; }
 	int capacity() { return n_capacity; }
 	bool empty()const { return size == 0; }
@@ -47,12 +46,19 @@ Vector<T>::Vector(Vector<T>&vec)
 {
 	n_size = vec.n_size;
 	n_capacity = vec.n_capacity;
-	buffer = vec.buffer[n_capacity];
+	buffer = new T[capacity];
 	for (int i = 0; i < vec.size(); i++)
 		buffer[i] = vec.buffer[i];
 
 }
 
+template<typename T>
+T& Vector<T>::operator[](int index)
+{
+	if (n_size < index)
+		throw "Error";
+	return buffer[index];
+}
 
 template<class T>
 void Vector<T>::reserve(int capacity)
@@ -75,7 +81,7 @@ template<typename T>
 void Vector<T>::push_back(T variable)
 {
 	if (n_size >= n_capacity) // в случае когда исходного размера будет не достаточно  							
-		reserve(n_capacity + 10);// reserve выделит новый объем памяти 
+		reserve(n_capacity + 10);// reserve выделить новый объем памяти 
 	buffer[n_size++] = variable;
 }
 
@@ -95,16 +101,8 @@ int Vector<T>::begin()
 template<typename T>
 int  Vector<T>::end()
 {
-	 return buffer[n_size-1];
+	 return buffer[n_size];
 }
-
-
-/*template<typename T>
-void Vector<T>::erase()
-{
-
-}
-*/
 
 template<typename T>
 void Vector<T>::insert(const T& index, const T& variable)
@@ -150,25 +148,32 @@ Vector<T>::~Vector()
 
 int main(void)
 {
-	Vector<int> add;
+	try {
+		Vector<int> add;
 
-	add.push_back(4);
-	add.push_back(2);
+		add.push_back(2);
+		std::cout << add[0];
+		add.insert(1, 19);
 
-	std::cout << add[0] << " " << add[1] << " ";
-	std::cout << add.back() << " ";
-	std::cout << add.front() << " ";
-	add.pop_back();
-	add.pop_back();
+		std::cout << add[0] << " " << add[1] << " ";
+		std::cout << add.back() << " ";
+		std::cout << add.front() << " ";
+		add.pop_back();
+		add.pop_back();
 
-	add.insert(3, 5);
-	add.insert(2, 1);
-	std::cout << add[3]<<" "<<add[2];
+		add.insert(3, 5);
+		add.insert(2, 1);
+		
 
-	std::cout <<"\nBegin: "<<add.begin();
-	std::cout << "\nEnd: " << add.end();
-	add.clear();
-	
-	
+		std::cout << "\nBegin: " << add.begin();
+		std::cout << "\nEnd: " << add.end();
+		add.clear();
+
+
+	}
+	catch (...)
+	{
+		std::cout << "Exception !!! \n";
+	}
 	
 }
