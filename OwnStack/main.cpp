@@ -75,7 +75,7 @@ template<typename T>
 void Vector<T>::push_back(T variable)
 {
 	if (n_size >= n_capacity) // в случае когда исходного размера будет не достаточно  							
-		reserve(n_capacity + 10);// reserve выделить новый объем памяти 
+		reserve(n_capacity + 10);// reserve выделит новый объем памяти 
 	buffer[n_size++] = variable;
 }
 
