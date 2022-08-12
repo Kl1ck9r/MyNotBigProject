@@ -173,7 +173,6 @@ int main(void)
 		std::cout << "\nEnd: " << add.end();
 		add.clear();
 
-
 	}
 	catch (...)
 	{
