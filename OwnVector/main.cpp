@@ -13,16 +13,19 @@ public:
 	void reserve(int capacity);
 	void push_back(T variable);
 	void pop_back();
+	void clear();
+
 	T& front();
 	T& back();
-	int begin();
-	int end();
-	void clear();
 
 	friend std::ostream& operator<<(std::ostream& oc, const Vector<T>& vec);
 	T& operator[](int index);
+	
+public:
 	int size() { return n_size; }
 	int capacity() { return n_capacity; }
+	int begin();
+	int end();
 	bool empty()const { return n_size == 0; }
 
 private:
